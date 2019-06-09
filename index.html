@@ -126,7 +126,7 @@
 								<ul class="mt-5 do-list">
 									<li class="ftco-animate"><input type="text" placeholder="name" name="Name" style="width: 400px; height:50px; border-radius:30px; padding: 10px" autofocus></li>
 									<li class="ftco-animate"><input type="text" id="ch1" placeholder="channel name" name="chName" style="width: 400px; height:50px; border-radius:30px; padding: 10px" autofocus></li>
-									<li class="ftco-animate"><select name="lang" style="width: 400px; height:50px; border-radius:30px; padding: 10px">
+									<li class="ftco-animate"><select name="lang" id="lang" style="width: 400px; height:50px; border-radius:30px; padding: 10px">
 												  <option value="en">English</option>
 												  <option value="hi">Hindi</option>
 												  <option value="pa">Punjabi</option>
@@ -156,7 +156,7 @@
 									  <ul class="mt-5 do-list">
 										  <li class="ftco-animate"><input type="text" placeholder="name" name="Name" style="width: 400px; height:50px; border-radius:30px; padding: 10px" autofocus></li>
 										  <li class="ftco-animate"><input type="text" id="ch2"placeholder="channel name" name="chName" style="width: 400px; height:50px; border-radius:30px; padding: 10px" autofocus></li>
-										  <li class="ftco-animate"><select name="lang" style="width: 400px; height:50px; border-radius:30px; padding: 10px">
+										  <li class="ftco-animate"><select name="lang" id="lang" style="width: 400px; height:50px; border-radius:30px; padding: 10px">
 														<option value="en">English</option>
 												  <option value="hi">Hindi</option>
 												  <option value="pa">Punjabi</option>
@@ -264,13 +264,15 @@
   <script src="js/main.js"></script>
   <script>
 	 
-	  document.getElementById('host').addEventListener('click', function(){
+	 document.getElementById('host').addEventListener('click', function(){
 		var a = document.getElementById('ch1').value;  
-		window.location.href = ("./classes.html?m="+a)});
+		var b = document.getElementById('lang').value;
+		window.location.href = ("./classes.html?m="+a+'&l='+b)});
 
 		document.getElementById('join').addEventListener('click', function(){
 		var a = document.getElementById('ch2').value;  
-		window.location.href = ("./classes.html?m="+a)});
+		var b = document.getElementById('lang').value;
+		window.location.href = ("./classes.html?m="+a+'&l='+b)});
   </script>
     
   </body>
