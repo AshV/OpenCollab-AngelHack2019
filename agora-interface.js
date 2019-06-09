@@ -330,16 +330,13 @@ var c = url.searchParams.get("m");
 var chats = firebase.database().ref('AH19/'+ c+ '/');
 chats.on('value', function (snapshot) {
   // Use this value
+  console.log(snapshot.val());
   console.log(snapshot);
-  for(i in snapshot.val())
+  const t = (snapshot.val());
+  for(i in t)
   {
     console.log(i);
-  }
-});
-
-setInterval(function(){
-  console.log('hi');
-  const c = document.getElementById('adoCont');
+    const c = document.getElementById('adoCont');
   const g = document.createElement('div');
   const cls = document.createAttribute('class');
   cls.value = "msg lft";
@@ -348,31 +345,66 @@ setInterval(function(){
   const clas = document.createAttribute('class');
   clas.value = "hdng";
   r.setAttributeNode(clas);
-  const user = document.createTextNode('Rohan');
-  const msg = document.createTextNode('Whats going on?');
-  r.appendChild(user);
+  let user, msg;
+    for(j in t[i])
+    {
+      //console.log(j);
+      
+      if(j=== 'name')
+      {
+        console.log(t[i][j]);
+        user = document.createTextNode(t[i][j]);
+      }
+      if(j === l)
+      {  
+        console.log(t[i][j]);
+        msg = document.createTextNode(t[i][j]);
+      }
+    }
+      r.appendChild(user);
   g.appendChild(r);
   g.appendChild(msg);
   c.appendChild(g);
   updateScroll(e);
-  setInterval(function(){
-  console.log('hi');
-  const c = document.getElementById('adoCont');
-  const g = document.createElement('div');
-  const cls = document.createAttribute('class');
-  cls.value = "msg rgt";
-  g.setAttributeNode(cls);
-  const r = document.createElement('div');
-  const clas = document.createAttribute('class');
-  clas.value = "hdng";
-  r.setAttributeNode(clas);
-  const user = document.createTextNode('You');
-  const msg = document.createTextNode('Nothing! You tell!');
-  r.appendChild(user);
-  g.appendChild(r);
-  g.appendChild(msg);
-  c.appendChild(g);
-  updateScroll(e);
-}, 3000);
-}, 3000);
+    console.log(i.name);
+  }
+});
+// setInterval(function(){
+//   console.log('hi');
+//   const c = document.getElementById('adoCont');
+//   const g = document.createElement('div');
+//   const cls = document.createAttribute('class');
+//   cls.value = "msg lft";
+//   g.setAttributeNode(cls);
+//   const r = document.createElement('div');
+//   const clas = document.createAttribute('class');
+//   clas.value = "hdng";
+//   r.setAttributeNode(clas);
+//   const user = document.createTextNode('Rohan');
+//   const msg = document.createTextNode('Whats going on?');
+//   r.appendChild(user);
+//   g.appendChild(r);
+//   g.appendChild(msg);
+//   c.appendChild(g);
+//   updateScroll(e);
+// }, 3000);
 
+// setInterval(function(){
+//   console.log('hi');
+//   const c = document.getElementById('adoCont');
+//   const g = document.createElement('div');
+//   const cls = document.createAttribute('class');
+//   cls.value = "msg rgt";
+//   g.setAttributeNode(cls);
+//   const r = document.createElement('div');
+//   const clas = document.createAttribute('class');
+//   clas.value = "hdng";
+//   r.setAttributeNode(clas);
+//   const user = document.createTextNode('You');
+//   const msg = document.createTextNode('Nothing! You tell!');
+//   r.appendChild(user);
+//   g.appendChild(r);
+//   g.appendChild(msg);
+//   c.appendChild(g);
+//   updateScroll(e);
+// }, 3000);
