@@ -129,7 +129,7 @@
     </section>
 
 
-
+    <button id="startRecognizeOnceAsyncButton">......</button>
     <footer class="ftco-footer ftco-section img" id="contact">
         <div class="overlay"></div>
         <div class="container">
@@ -190,7 +190,7 @@
     <script src="js/scrollax.min.js"></script>
     <script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
     <script src="js/main.js"></script>
-    <div id="content" style="display:none">
+    <div id="content">
         <table width="100%">
             <tr>
                 <td></td>
@@ -206,7 +206,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><button id="startRecognizeOnceAsyncButton">Start</button></td>
+                <td></td>
             </tr>
             <tr>
                 <td align="right" valign="top"></td>
@@ -295,7 +295,7 @@
             startRecognizeOnceAsyncButton.disabled = false;
 
             document.getElementById('content').style.display = 'block';
-            document.getElementById('warning').style.display = 'none';
+       //     document.getElementById('warning').style.display = 'none';
 
             // in case we have a function for getting an authorization token, call it.
             if (typeof RequestAuthorizationToken === "function") {
@@ -332,17 +332,17 @@
         });
     }
 
-    var firebaseConfig = {
-        apiKey: "api-key",
-        authDomain: "project-id.firebaseapp.com",
-        databaseURL: "https://outlaystore.firebaseio.com",
-        projectId: "project-id",
-        storageBucket: "project-id.appspot.com",
-        messagingSenderId: "sender-id",
-        appID: "app-id",
-    };
+    //var firebaseConfig = {
+    //    apiKey: "api-key",
+    //    authDomain: "project-id.firebaseapp.com",
+    //    databaseURL: "https://outlaystore.firebaseio.com",
+    //    projectId: "project-id",
+    //    storageBucket: "project-id.appspot.com",
+    //    messagingSenderId: "sender-id",
+    //    appID: "app-id",
+    //};
 
-    firebase.initializeApp(firebaseConfig);
+    //firebase.initializeApp(firebaseConfig);
     function pushToFirebase(key, data, timestamp) {
         debugger;
         var url = "AH19/emily/" + timestamp + "-" + name + '/' + key + '/';
