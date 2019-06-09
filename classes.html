@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>Open Colab</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -21,192 +21,337 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><img src="oc.png" style="height: 60px"></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item active"><a href="classes.html" class="nav-link">Meeting</a></li>
-	          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-	        </ul>
-	      </div>
-		  </div>
-	  </nav>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="oc.png" style="height: 60px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="classes.html" class="nav-link">Meeting</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- END nav -->
 
     <section class="hero-wrap js-fullheight">
-      <div class="overlay" style="top: -12%"></div>
-      <div class="containr" id="contis">
-        <div class="row no-gutters slider-text js-fullheight justify-content-center" >
-          <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-3 bread">Agenda</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Video</a></span> <span>Audio</span></p>
-		  </div>
-		  <div class="vdoCont" id='agora_local'>
-				<div class="conts-fluid p-0">
-						<div id="main-conts">
-							<div id="screen-share-btn-conts" class="col-2 float-right text-right mt-2">
-								<button id="screen-share-btn"  type="button" class="btn btn-lg">
-									<i id="screen-share-icon" class="fas fa-share-square"></i>
-								</button>
-							</div>
-							<div id="buttons-conts" class="row justify-content-center mt-3">
-								<div class="col-md-2 text-center">
-									<button id="mic-btn" type="button" class="btn btn-block btn-dark btn-lg">
-										<i id="mic-icon" class="fas fa-microphone"></i>
-									</button>
-								</div>
-								<div class="col-md-2 text-center">
-									<button id="video-btn"  type="button" class="btn btn-block btn-dark btn-lg">
-										<i id="video-icon" class="fas fa-video"></i>
-									</button>
-								</div>
-								<div class="col-md-2 text-center">
-									<button id="exit-btn"  type="button" class="btn btn-block btn-danger btn-lg">
-										<i id="exit-icon" class="fas fa-phone-slash"></i>
-									</button>
-								</div>
-							</div>
-							<div id="full-screen-video"></div>
-							<div id="lower-video-bar" class="row mb-1">
-								<div id="remote-streams-conts" class="conts col-9 ml-1">
-									<div id="remote-streams" class="row">
-										<!-- insert remote streams dynamically -->
-									</div>
-								</div>
-								<div id="local-stream-conts" class="col p-0">
-									<div id="mute-overlay" class="col">
-										<i id="mic-icon" class="fas fa-microphone-slash"></i>
-									</div>
-									<div id="no-local-video" class="col text-center">
-										<i id="user-icon" class="fas fa-user"></i>
-									</div>
-									<div id="local-video" class="col p-0"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="modal fade" id="modalForm">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header text-center">
-						<h4 class="modal-title w-100 font-weight-bold">Join Channel</h4>
-						<button type="button" class="close" data-dismiss="modal">
-							<span>&times;</span>
-						</button>
-					</div>
-					<div class="modal-footer d-flex justify-content-center">
-						<button id="join-channel" class="btn btn-default">Join Channel</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-        	<div class="adoCont" id="adoCont">
-			<div class="adoCont" id="adoCont">
-			<div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
-			<div class="msg rgt"><div class="hdng">You</div>Hi!</div>
-			<div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
-			<div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
-			<div class="msg rgt"><div class="hdng">You</div>Hi!</div>
-			<div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
-			<div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
-			<div class="msg rgt"><div class="hdng">You</div>Hi!</div>
-			<div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
-		</div>
-        </div>
-      </div>
+        <div class="overlay" style="top: -12%"></div>
+        <div class="containr" id="contis">
+            <div class="row no-gutters slider-text js-fullheight justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-3 bread">Agenda</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Video</a></span> <span>Audio</span></p>
+                </div>
+                <div class="vdoCont" id='agora_local'>
+                    <div class="conts-fluid p-0">
+                        <div id="main-conts">
+                            <div id="screen-share-btn-conts" class="col-2 float-right text-right mt-2">
+                                <button id="screen-share-btn" type="button" class="btn btn-lg">
+                                    <i id="screen-share-icon" class="fas fa-share-square"></i>
+                                </button>
+                            </div>
+                            <div id="buttons-conts" class="row justify-content-center mt-3">
+                                <div class="col-md-2 text-center">
+                                    <button id="mic-btn" type="button" class="btn btn-block btn-dark btn-lg">
+                                        <i id="mic-icon" class="fas fa-microphone"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <button id="video-btn" type="button" class="btn btn-block btn-dark btn-lg">
+                                        <i id="video-icon" class="fas fa-video"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <button id="exit-btn" type="button" class="btn btn-block btn-danger btn-lg">
+                                        <i id="exit-icon" class="fas fa-phone-slash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="full-screen-video"></div>
+                            <div id="lower-video-bar" class="row mb-1">
+                                <div id="remote-streams-conts" class="conts col-9 ml-1">
+                                    <div id="remote-streams" class="row">
+                                        <!-- insert remote streams dynamically -->
+                                    </div>
+                                </div>
+                                <div id="local-stream-conts" class="col p-0">
+                                    <div id="mute-overlay" class="col">
+                                        <i id="mic-icon" class="fas fa-microphone-slash"></i>
+                                    </div>
+                                    <div id="no-local-video" class="col text-center">
+                                        <i id="user-icon" class="fas fa-user"></i>
+                                    </div>
+                                    <div id="local-video" class="col p-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modalForm">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title w-100 font-weight-bold">Join Channel</h4>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button id="join-channel" class="btn btn-default">Join Channel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="adoCont" id="adoCont">
+                    <div class="adoCont" id="adoCont">
+                        <div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
+                        <div class="msg rgt"><div class="hdng">You</div>Hi!</div>
+                        <div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
+                        <div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
+                        <div class="msg rgt"><div class="hdng">You</div>Hi!</div>
+                        <div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
+                        <div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
+                        <div class="msg rgt"><div class="hdng">You</div>Hi!</div>
+                        <div class="msg lft"><div class="hdng">Rohan</div>Hey! Whatsup!</div>
+                    </div>
+                </div>
+            </div>
     </section>
-		
-		
+
+
 
     <footer class="ftco-footer ftco-section img" id="contact">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-        	<div class="col-lg-3 col-md-6 mb-5 mb-md-5 ftco-animate">
-            <div class="ftco-footer-widget mb-4">
-              <h1 class="logo">Open Colab</h1>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-5 ftco-animate">
+                    <div class="ftco-footer-widget mb-4">
+                        <h1 class="logo">Open Colab</h1>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6 mb-5 mb-md-5 ftco-animate">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="location">203 Fake St. Mountain View, San Francisco, California, USA</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+                    <div class="ftco-footer-widget mb-4">
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg col-md-6 mb-5 mb-md-5 ftco-animate">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="location">203 Fake St. Mountain View, San Francisco, California, USA</h2>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
+            <div class="row">
+                <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-    
-  
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="js/main.js"></script>
-  
-    
-  </body>
-  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
-  <script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.6.0.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$("#mic-btn").prop("disabled", true);
-		$("#video-btn").prop("disabled", true);
-		$("#screen-share-btn").prop("disabled", true);
-		$("#exit-btn").prop("disabled", true);
 
-		$(document).ready(function(){
-			$("#modalForm").modal("show");
-		});
-	</script>
-	<script src="ui.js"></script>
-	<script src="agora-interface.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+    <script src="js/main.js"></script>
+    <div id="content" style="display:none">
+        <table width="100%">
+            <tr>
+                <td></td>
+                <td><h1 style="display:none">Microsoft Cognitive Services Speech SDK JavaScript Quickstart</h1></td>
+            </tr>
+            <tr>
+                <td align="right"><a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started" target="_blank"></a></td>
+                <td><input style="display:none" id="subscriptionKey" type="text" size="40" value="subscription"></td>
+            </tr>
+            <tr>
+                <td align="right"></td>
+                <td><input style="display:none" id="serviceRegion" type="text" size="40" value="YourServiceRegion"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="startRecognizeOnceAsyncButton">Start</button></td>
+            </tr>
+            <tr>
+                <td align="right" valign="top"></td>
+                <td><textarea style="display:none" id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.6.0.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $("#mic-btn").prop("disabled", true);
+    $("#video-btn").prop("disabled", true);
+    $("#screen-share-btn").prop("disabled", true);
+    $("#exit-btn").prop("disabled", true);
+
+    $(document).ready(function () {
+        $("#modalForm").modal("show");
+    });
+</script>
+<script>
+    // status fields and start button in UI
+    var phraseDiv;
+    var startRecognizeOnceAsyncButton;
+
+    // subscription key and region for speech services.
+    var subscriptionKey, serviceRegion;
+    var authorizationToken;
+    var SpeechSDK;
+    var recognizer;
+
+    document.addEventListener("DOMContentLoaded", function () {
+        startRecognizeOnceAsyncButton = document.getElementById("startRecognizeOnceAsyncButton");
+        subscriptionKey = "054b7b7cee9f41a4926be440bda04f97";
+        serviceRegion = "centralindia";
+        phraseDiv = document.getElementById("phraseDiv");
+
+        startRecognizeOnceAsyncButton.addEventListener("click", function () {
+            startRecognizeOnceAsyncButton.disabled = true;
+            phraseDiv.innerHTML = "";
+
+            // if we got an authorization token, use the token. Otherwise use the provided subscription key
+            var speechConfig;
+            if (authorizationToken) {
+                speechConfig = SpeechSDK.SpeechConfig.fromAuthorizationToken(authorizationToken, serviceRegion);
+            } else {
+                if (subscriptionKey === "" || subscriptionKey === "subscription") {
+                    alert("Please enter your Microsoft Cognitive Services Speech subscription key!");
+                    return;
+                }
+                speechConfig = SpeechSDK.SpeechConfig.fromSubscription(subscriptionKey, serviceRegion);
+            }
+
+            speechConfig.speechRecognitionLanguage = "en-US";
+            var audioConfig = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
+            recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
+
+            recognizer.recognizeOnceAsync(
+                function (result) {
+                    debugger;
+                    startRecognizeOnceAsyncButton.disabled = false;
+                    phraseDiv.innerHTML += result.text;
+                    window.console.log(result);
+                    translate(result.text);
+                    recognizer.close();
+                    recognizer = undefined;
+                },
+                function (err) {
+                    startRecognizeOnceAsyncButton.disabled = false;
+                    phraseDiv.innerHTML += err;
+                    window.console.log(err);
+
+                    recognizer.close();
+                    recognizer = undefined;
+                });
+        });
+
+        if (!!window.SpeechSDK) {
+            SpeechSDK = window.SpeechSDK;
+            startRecognizeOnceAsyncButton.disabled = false;
+
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('warning').style.display = 'none';
+
+            // in case we have a function for getting an authorization token, call it.
+            if (typeof RequestAuthorizationToken === "function") {
+                RequestAuthorizationToken();
+            }
+        }
+    });
+
+</script>
+<script>
+    var baseLanguage = 'en';
+    var languageList = ['en', 'fr', 'gu', 'bn'];
+    var name = "Prakhar";
+
+    function translate(text) {
+        debugger;
+        if (text == undefined) return;
+        var timestamp = Math.floor(Date.now() / 1000);
+
+        pushToFirebase(baseLanguage, text, timestamp);
+
+        pushToFirebase("name", name, timestamp);
+
+        languageList.forEach(function (lang) {
+
+            fetch('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190609T040328Z.275d92e478a6d501.6547d094748adfbf9d6638423e0f55978533c585&text=' + encodeURIComponent(text) + '&lang=' + baseLanguage + '-' + lang)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    pushToFirebase(lang, myJson.text[0], timestamp);
+
+                });
+        });
+    }
+
+    var firebaseConfig = {
+        apiKey: "api-key",
+        authDomain: "project-id.firebaseapp.com",
+        databaseURL: "https://outlaystore.firebaseio.com",
+        projectId: "project-id",
+        storageBucket: "project-id.appspot.com",
+        messagingSenderId: "sender-id",
+        appID: "app-id",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    function pushToFirebase(key, data, timestamp) {
+        debugger;
+        var url = "AH19/emily/" + timestamp + "-" + name + '/' + key + '/';
+
+        firebase.database().ref(url).set(data);
+    }
+
+</script>
+<script src="ui.js"></script>
+<script src="agora-interface.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
 </html>
