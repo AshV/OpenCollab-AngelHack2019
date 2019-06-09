@@ -336,3 +336,43 @@ chats.on('value', function (snapshot) {
     console.log(i);
   }
 });
+
+setInterval(function(){
+  console.log('hi');
+  const c = document.getElementById('adoCont');
+  const g = document.createElement('div');
+  const cls = document.createAttribute('class');
+  cls.value = "msg lft";
+  g.setAttributeNode(cls);
+  const r = document.createElement('div');
+  const clas = document.createAttribute('class');
+  clas.value = "hdng";
+  r.setAttributeNode(clas);
+  const user = document.createTextNode('Rohan');
+  const msg = document.createTextNode('Whats going on?');
+  r.appendChild(user);
+  g.appendChild(r);
+  g.appendChild(msg);
+  c.appendChild(g);
+  updateScroll(e);
+  setInterval(function(){
+  console.log('hi');
+  const c = document.getElementById('adoCont');
+  const g = document.createElement('div');
+  const cls = document.createAttribute('class');
+  cls.value = "msg rgt";
+  g.setAttributeNode(cls);
+  const r = document.createElement('div');
+  const clas = document.createAttribute('class');
+  clas.value = "hdng";
+  r.setAttributeNode(clas);
+  const user = document.createTextNode('You');
+  const msg = document.createTextNode('Nothing! You tell!');
+  r.appendChild(user);
+  g.appendChild(r);
+  g.appendChild(msg);
+  c.appendChild(g);
+  updateScroll(e);
+}, 3000);
+}, 3000);
+
